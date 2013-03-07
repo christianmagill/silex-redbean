@@ -1,0 +1,16 @@
+{
+    "require": {
+        "silex/silex": "1.0.*@dev",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "symfony/twig-bridge": "~2.1",
+        "swiftmailer/swiftmailer": ">=4.1.2,<4.2-dev",
+        "symfony/security": "~2.1",
+        "monolog/monolog": ">=1.0.0",
+        "gabordemooij/redbean": "dev-master"
+    },
+    "autoload": {
+        "psr-0" : {
+            "App" : "./"
+        }
+    }
+}
