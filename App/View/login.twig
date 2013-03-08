@@ -1,4 +1,4 @@
-{% if is_granted('ROLE_USER') %}
+{% if is_granted('ROLE_BUILDER') %}
     <p>Welcome {{ app.security.token.user.username }}!</p>
     <p><a href="{{ path('logout') }}">Log out</a></p>
 {% else %}

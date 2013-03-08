@@ -13,8 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
             print_r($user);
             echo $user->name;
 
-            echo $app['url_generator']->generate('home',array('name' => 'Jane'));
-
             return $app['twig']->render('home.twig', array('name' => $name));
         }
 

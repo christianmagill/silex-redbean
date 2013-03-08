@@ -28,16 +28,16 @@ namespace App\Model{
             if(!$user){
                 throw new UsernameNotFoundException(sprintf('Username "%s" does not exist.', $username));
             }
-            return $user;
+            return new UserModel($user);
         }
 
         public function refreshUser(UserInterface $user){
-            return $this->loadUserByUsername($user->username);
+            return $this->loadUserByUsername($user->getUsername());
         }
 
         public function supportsClass($class)
         {
-            return $class === 'User_Model';
+            return $class === 'UserModel';
         }
     }
 
