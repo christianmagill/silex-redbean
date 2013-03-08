@@ -27,7 +27,7 @@ class MyModelFormatter implements RedBean_IModelFormatter{
 $formatter = new MyModelFormatter;
 RedBean_ModelHelper::setModelFormatter($formatter);
 
-R::debug(true);
+R::debug(false);
 R::freeze(false);
 
 // Monolog Logger Service
@@ -89,8 +89,6 @@ $u->sharedRole[] = R::findOne('role','name = ?',array('ROLE_BUILDER'));
 $u->salt = md5(mcrypt_create_iv(22, MCRYPT_RAND));
 $u->password = $app['security.encoder.digest']->encodePassword('mypassword',$u->salt);
 \R::store($u);
-
-$u2 = \R::findOne('user','username = ?',array('joeuser'));
 
 
 // URL Generator Service

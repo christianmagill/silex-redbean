@@ -1,5 +1,5 @@
 {% if is_granted('ROLE_BUILDER') %}
-    <p>Welcome {{ app.security.token.user.username }}!</p>
+    <p>Welcome {{ app.security.token.user.username }} {{ app.security.token.user.email }}!</p>
     <p><a href="{{ path('logout') }}">Log out</a></p>
 {% else %}
     <form action="{{ path('login_check') }}" method="post">

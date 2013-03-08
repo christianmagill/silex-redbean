@@ -6,14 +6,14 @@ namespace App\Model{
 
     class UserModel implements UserInterface{
 
-        protected $bean = null;
+        private $bean = null;
 
         function __construct($bean){
             $this->bean = $bean;
         }
 
         function __get($prop){
-            return $this->bean->prop;
+            return $this->bean->$prop;
         }
 
         function __set($prop, $val){
@@ -34,6 +34,10 @@ namespace App\Model{
 
         function store(){
             \R::store($this->bean);
+        }
+
+        function trash(){
+            \R::trash($this->bean);
         }
 
         function getRoles(){
