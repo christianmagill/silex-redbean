@@ -28,6 +28,10 @@ namespace App\Model{
             unset($this->bean->$prop);
         }
 
+        function __call($method, $args){
+            return call_user_func_array(array($this->bean,$method),$args);
+        }
+
         function store(){
             \R::store($this->bean);
         }
